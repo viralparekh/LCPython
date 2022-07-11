@@ -29,6 +29,25 @@ class Solution:
 
     
     
+## without converting to str
+
+class Solution:
+    def isPalindrome(self, x: int) -> bool:
+        if x<0:
+            return False
+        if x==0:
+            return True
+        
+        rev_digit = []
+        temp = x
+        while temp>0:
+            digit = temp % 10
+            rev_digit.append(digit)
+            temp = temp //10
+        
+        return rev_digit==rev_digit[::-1]
+            
+    
   """"
   
   return False if x < 0 else x == int(str(x)[::-1])
